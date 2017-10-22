@@ -1,0 +1,181 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Friend Finder - Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row container-fluid">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+    <form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="url" class="col-sm-2 control-label">Image URL</label>
+    <div class="col-sm-10">
+      <input type="url" class="form-control" id="url" placeholder="Image URL">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q1" class="col-sm-2 control-label">Question 1</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q1">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q2" class="col-sm-2 control-label">Question 2</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q2">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q3" class="col-sm-2 control-label">Question 3</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q3">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q4" class="col-sm-2 control-label">Question 4</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q4">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q5" class="col-sm-2 control-label">Question 5</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q5">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q6" class="col-sm-2 control-label">Question 6</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q6">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q7" class="col-sm-2 control-label">Question 7</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q7">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q8" class="col-sm-2 control-label">Question 8</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q8">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q9" class="col-sm-2 control-label">Question 9</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q9">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="q10" class="col-sm-2 control-label">Question 10</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="q10">
+        <option>1 (Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 (Agree)</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <button type="submit" class="submit btn btn-default">Submit</button>
+    </div>
+
+
+</div>
+</form>
+</div>
+<div class="col-sm-2"></div>
+</div>
+<script>
+/* global $ */
+/* global alert */
+$('.submit').on('click', function (event) {
+  event.preventDefault();
+  var newFriend = {
+    name: $('#name').val().trim(),
+    phone: $('#url').val().trim(),
+    scores: [$('#q1').val().trim(), $('#q2').val().trim(), $('#q3').val().trim(), $('#q4').val().trim(), $('#q5').val().trim(),
+      $('#q6').val().trim(), $('#q7').val().trim(), $('#q8').val().trim(), $('#q9').val().trim(), $('#q10').val().trim()]
+  };
+
+  $.post('/api/friends', newFriend,
+    function (data) {
+      if (data) {
+        alert('Done');
+      } else {
+        alert('NO');
+      }
+    });
+});
+</script>
+</body>
+</html>
