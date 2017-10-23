@@ -1,5 +1,5 @@
 
-var friends = require('/home/saam/development/FriendFinder/app/data/friends.js');
+var friends = require('./app/data/friends.js');
 var sumUser = 0;
 
 module.exports = function (app) {
