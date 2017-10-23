@@ -11,7 +11,7 @@ module.exports = function (app) {
     var newFriend = req.body;
     friends.push(newFriend);
     console.log(matches(friends, newFriend));
-    res.json(matches(friends, newFriend));
+    res.send(matches(friends, newFriend));
   });
 };
 

@@ -2,12 +2,15 @@
   <head>
     <meta charset="UTF-8">
     <title>Friend Finder - Survey</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   </head>
   <body>
-    <div class="row container-fluid">
+
+    <div class="container-fluid">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
     <form class="form-horizontal">
@@ -146,8 +149,34 @@
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-10">
-      <button type="submit" class="submit btn btn-default">Submit</button>
+      <button type="button" id="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
     </div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div id="matchName"></div>
+        <div id="matchPhoto"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
 
 </div>
@@ -155,14 +184,15 @@
 </div>
 <div class="col-sm-2"></div>
 </div>
+<footer><a href="/api/friends">Friends API</a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/khosravi11/FriendFinder#friendfinder" target="_blank">Git Hub</a></footer>
 <script>
 /* global $ */
 /* global alert */
-$('.submit').on('click', function (event) {
+$('#submit').on('click', function (event) {
   event.preventDefault();
   var newFriend = {
     name: $('#name').val().trim(),
-    phone: $('#url').val().trim(),
+    photo: $('#url').val().trim(),
     scores: [$('#q1').val().trim(), $('#q2').val().trim(), $('#q3').val().trim(), $('#q4').val().trim(), $('#q5').val().trim(),
       $('#q6').val().trim(), $('#q7').val().trim(), $('#q8').val().trim(), $('#q9').val().trim(), $('#q10').val().trim()]
   };
@@ -170,7 +200,10 @@ $('.submit').on('click', function (event) {
   $.post('/api/friends', newFriend,
     function (data) {
       if (data) {
-        alert('Done');
+        console.log(data.name);
+        $('#matchName').html('<p>'+ data.name + '</p>');
+        $('#matchPhoto').html('<p><img src="' + data.photo + '" /></p>');
+
       } else {
         alert('NO');
       }
