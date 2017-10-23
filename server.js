@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3333;
 
 // S ets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -18,6 +17,6 @@ require('./app/data/friends.js');
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
-app.listen(PORT, function () {
-  console.log('App listening on PORT ' + PORT);
+app.listen(process.env.PORT || 3333, function () {
+  console.log('App listening on PORT ' + 3333);
 });
